@@ -5,6 +5,10 @@
 window.TRIP_CONFIG={
   meta:{title:"沈阳四日游",dates:"2026.09.10—09.13",home:"南京",city:"沈阳",currency:"CNY",travellers:3},
   categories:{transport:"交通",stay:"住宿",food:"餐饮",experience:"体验"},
+  stays:[
+    {node:"qingheRoom",dates:"9/10 入住 · 1 晚",room:"豪华双床温泉套房",beds:"2 × 1.8m 大床",booking:"尽早锁房；付款页核对含四早、四张温泉票与退改规则。"},
+    {node:"atour",dates:"9/11 入住 · 2 晚",room:"尊享家庭房",beds:"1.8m 大床 + 1.2m 单人床",booking:"尽早锁定家庭房；备注高楼层、无烟、远离电梯。"}
+  ],
   nodes:{
     nkg:{name:"南京禄口机场",categories:["transport"],lat:31.7354,lng:118.8620,address:"南京市江宁区翔鹰三路",short:"08:55 起飞 · 南京出发",intro:"全程只带随身行李，建议提前两小时抵达。",why:"把抵达沈阳后的体力留给温泉，选择上午直飞。",facts:[["航班候选","MU2827"],["起飞","08:55"],["行李","仅随身行李"]],price:"机票另计",color:"#3f6e8a",tone:"dark"},
     flightOut:{name:"MU2827 东航直飞",categories:["transport"],lat:31.7354,lng:118.8620,address:"南京禄口 T2 → 沈阳桃仙 T3",short:"08:55 起飞 · 约 2 小时 20 分",intro:"南京至沈阳的直飞候选航班。最终以实际购买订单的航班号、航站楼和起飞时间为准。",why:"上午抵达后可以直接去清河半岛，第一天不赶市区行程。",facts:[["建议到机场","06:55"],["起飞候选","08:55"],["飞行时间","约 2 小时 20 分"],["行李","仅随身行李"]],price:"机票另计",color:"#3f6e8a",tone:"dark"},
