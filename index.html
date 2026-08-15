@@ -23,10 +23,32 @@
       .overview-metrics div{padding:9px 8px}
       .overview-metrics small{font-size:11px}
       .overview-metrics b{font-size:14px}
+      .overview-metric-action{display:block;border:0;border-radius:9px;background:#e8f2ee;padding:9px 8px;text-align:left;color:#24383a;font:inherit;cursor:pointer}
+      .overview-metric-action:hover{background:#dcece6}
+      .overview-metric-action small,.overview-metric-action b,.overview-metric-action em{display:block}
+      .overview-metric-action small{color:#356f67;font-size:11px}
+      .overview-metric-action b{margin-top:4px;font-size:14px}
+      .overview-metric-action em{margin-top:2px;color:#356f67;font-size:10px;font-style:normal}
       .overview-periods{display:grid;gap:6px;margin:9px 0}
       .overview-periods div{display:grid;grid-template-columns:64px minmax(0,1fr);gap:7px;align-items:start}
       .overview-periods small{color:#356f67;font-weight:700}
       .overview-periods span{color:#52625f;font-size:13px;line-height:1.55}
+      .stay-panel-title h2{font-size:24px}
+      .stay-panel-title p{margin-bottom:13px!important}
+      .stay-booking-list{display:grid;gap:12px}
+      .stay-booking-card{display:grid;grid-template-columns:116px minmax(0,1fr);width:100%;overflow:hidden;border:1px solid #dbe1df;border-radius:12px;background:#fff;padding:0;text-align:left;color:#24383a;font:inherit;cursor:pointer}
+      .stay-booking-card:hover{border-color:#82b8aa;box-shadow:0 4px 16px #356f6715}
+      .stay-booking-card figure{height:100%;min-height:176px;margin:0;background:#edf3f0}
+      .stay-booking-card img{display:block;width:100%;height:100%;object-fit:cover}
+      .stay-card-fallback{display:grid;height:100%;place-items:center;color:#356f67;font-size:28px}
+      .stay-card-copy{padding:13px 12px}
+      .stay-dates{display:block;color:#356f67;font-size:12px;font-weight:700}
+      .stay-card-copy h3{margin:5px 0 7px;font:700 18px/1.25 "Noto Serif SC",serif}
+      .stay-card-copy>b{display:block;font-size:13px}
+      .stay-card-copy p{margin:6px 0 0;color:#556965;font-size:12px;line-height:1.45}
+      .stay-card-copy .stay-booking-note{color:#6a7c77}
+      .stay-card-copy>div{display:flex;justify-content:space-between;gap:8px;margin-top:9px;color:#356f67;font-size:12px;font-weight:700}
+      .stay-card-copy em{font-style:normal;white-space:nowrap}
       @media(max-width:480px){.overview-metrics{grid-template-columns:repeat(2,1fr)}}
     </style>
     <main class="travel-app">
@@ -48,7 +70,7 @@
     <script>window._AMapSecurityConfig={securityJsCode:"7c1c1a338b23057b40de92dd061a6ec8"};</script>
     <script src="https://webapi.amap.com/maps?v=2.0&key=d66add363cf76fe06d8f3c21b476aea4&plugin=AMap.Scale,AMap.ToolBar"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-    <script src="itinerary.config.js?v=20260815o"></script>
-    <script src="app.js?v=20260815o"></script>
+    <script src="itinerary.config.js?v=20260815p"></script>
+    <script src="app.js?v=20260815p"></script>
   </body>
 </html>
