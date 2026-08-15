@@ -1,0 +1,36 @@
+# 面向人工编辑的结构说明；运行中的同一份数据位于 itinerary.config.js。
+meta:
+  title: 行程标题
+  dates: 出行日期范围
+categories:
+  transport: 交通
+  stay: 住宿
+  food: 餐饮
+  sight: 景点
+  experience: 体验
+  shopping: 购物
+nodes:
+  node-id:
+    name: 地点名称
+    categories: [sight]
+    lat: 41.0
+    lng: 123.0
+    address: 地址
+    short: 地图悬停摘要
+    intro: 地点介绍
+    why: 为什么安排
+    facts: [[预约, 官方渠道], [开放, "09:00–17:00"]]
+    price: 费用或待确认项
+days:
+  - id: D1
+    date: 9/10 周四
+    title: 当天标题
+    stayNode: node-id
+    dailyBudget: ¥0–0
+    view: {lng: 123.0, lat: 41.0, zoom: 12}
+    stops:
+      - node: node-id
+        time: "09:00"
+        detail: 做什么
+        mode: 网约车
+        duration: 20 分钟
