@@ -36,3 +36,14 @@ function detailPanel(){
   };
   return `<section class="panel-title day-title"><div><h2>${day.title}</h2><p>${day.summary}</p></div><div class="time-zoom" aria-label="时间轴缩放"><button class="${state.timeZoom==="fit"?"active":""}" data-time-zoom="fit" title="按当天安排放大" aria-label="按当天安排放大">⌕</button><button class="${state.timeZoom==="day"?"active":""}" data-time-zoom="day" title="显示全天" aria-label="显示全天">⤢</button></div></section><article class="calendar-day"><div class="calendar-track">${line(720,"12:00")}${line(1080,"18:00")}${raw.map(card).join("")}</div><footer>${day.stayNode?`<button class="calendar-stay" data-node="${day.stayNode}">🛏 ${day.stay}</button>`:"<span>✈ 中午退房 · 无住宿</span>"}<b>${day.dailyBudget}</b></footer></article>`
 }
+
+// The all-days view is intentionally compact: decisions are surfaced as four metrics,
+// while every day exposes two easy-to-scan time periods instead of a prose summary.
+function overviewPanel(){
+  const cards=days.map(day=>{
+    const periods=(day.overview||[["安排",day.summary]]).map(([label,content])=>`<div><small>${label}</small><span>${content}</span></div>`).join("");
+    const footer=day.stayNode?`🛏 ${day.stay} · ${day.dailyBudget}`:`✈ 返程日 · ${day.dailyBudget}`;
+    return `<button class="day-overview" data-jump="${day.id}"><span class="day-label">${day.id} · ${day.date}</span><b>${day.title}</b><div class="overview-periods">${periods}</div><small>${footer}</small></button>`;
+  }).join("");
+  return `<section class="overview-metrics"><div><small>🗓 行程</small><b>${days.length} 天</b></div><div><small>🛏 住宿</small><b>2 处</b></div><div><small>¥ 预算</small><b>8.2–9.0k</b></div><div><small>👥 同行</small><b>${meta.travellers} 人</b></div></section><section class="section-block"><div class="day-overview-list">${cards}</div></section>`;
+}
