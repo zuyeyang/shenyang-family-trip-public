@@ -51,6 +51,25 @@
       .stay-card-copy em{font-style:normal;white-space:nowrap}
       @media(max-width:480px){.overview-metrics{grid-template-columns:repeat(2,1fr)}}
     </style>
+    <style>
+      .day-tabs{grid-template-columns:1.3fr 1.1fr repeat(4,1fr)}
+      .city-tab b{font-size:14px}
+      .city-stepper{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0 0 17px}
+      .city-step{border:1px solid #dbe1df;border-radius:9px;background:#fff;color:#71807d;padding:8px 4px;font:inherit;cursor:pointer;text-align:center}
+      .city-step b,.city-step span{display:block}.city-step b{font-size:11px}.city-step span{margin-top:2px;font-size:12px;font-weight:700}
+      .city-step.active{background:#356f67;border-color:#356f67;color:#fff}
+      .city-guide-head h2{margin:0;font:700 25px/1.3 "Noto Serif SC",serif}
+      .city-guide-head>p:not(.eyebrow){margin:8px 0 15px;color:#52625f;font-size:14px;line-height:1.65}
+      .city-facts{display:grid;gap:8px}
+      .city-facts article{display:grid;grid-template-columns:104px minmax(0,1fr);gap:9px;align-items:start;border:1px solid #dbe1df;border-radius:10px;padding:10px 11px;background:#fff}
+      .city-facts b{color:#356f67;font-size:12px}.city-facts span{color:#536562;font-size:12px;line-height:1.55}
+      .city-next{display:flex;justify-content:space-between;width:100%;margin-top:14px;border:0;border-radius:10px;background:#e7f1ee;color:#285d54;padding:12px 13px;font:700 14px inherit;cursor:pointer}
+      .city-next span{font-size:18px;line-height:.8}
+      .guide-label,.guide-detail,.guide-line-label,.guide-story-year{font-family:"Noto Sans SC",system-ui,sans-serif;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round;pointer-events:none}
+      .guide-label{fill:#274842;font-size:14px;font-weight:800}.guide-detail{fill:#536864;font-size:10px;font-weight:600}.guide-line-label{fill:#9b5d17;font-size:13px;font-weight:800}.guide-story-year{fill:#fff;stroke:none;font-size:9px;font-weight:800}
+      .guide-story{pointer-events:all;cursor:pointer}.guide-story circle{stroke:#fff;stroke-width:3px;filter:drop-shadow(0 3px 5px #203c3533)}
+      @media(max-width:520px){.day-tabs{grid-template-columns:1.35fr 1.1fr repeat(4,1fr)}.city-tab b{font-size:12px}.city-tab small{font-size:9px}.city-facts article{grid-template-columns:82px minmax(0,1fr)}}
+    </style>
     <main class="travel-app">
       <section class="map-stage" aria-label="沈阳旅行地图">
         <header class="map-title"><p id="trip-dates"></p><h1 id="trip-title"></h1></header>
@@ -70,7 +89,7 @@
     <script>window._AMapSecurityConfig={securityJsCode:"7c1c1a338b23057b40de92dd061a6ec8"};</script>
     <script src="https://webapi.amap.com/maps?v=2.0&key=d66add363cf76fe06d8f3c21b476aea4&plugin=AMap.Scale,AMap.ToolBar"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-    <script src="itinerary.config.js?v=20260815r"></script>
-    <script src="app.js?v=20260815r"></script>
+    <script src="itinerary.config.js?v=20260815s"></script>
+    <script src="app.js?v=20260815s"></script>
   </body>
 </html>
