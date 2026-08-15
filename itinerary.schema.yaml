@@ -6,9 +6,7 @@ categories:
   transport: 交通
   stay: 住宿
   food: 餐饮
-  sight: 景点
   experience: 体验
-  shopping: 购物
 nodes:
   node-id:
     name: 地点名称
