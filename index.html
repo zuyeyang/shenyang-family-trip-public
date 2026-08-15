@@ -10,78 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      .leaflet-container{font-family:"Noto Sans SC",system-ui,sans-serif}.d3-map-overlay{position:absolute;pointer-events:none}.d3-map-overlay .node{pointer-events:all;cursor:pointer}.map-hint{z-index:500;background:#ffffffd9}.node-time,.route-edge-label{font-size:11px!important;fill:#6a7775!important}.route-edge-label{paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}
-    </style>
   </head>
   <body>
-    <main class="app-shell">
-      <header class="topbar">
-        <div>
-          <p class="eyebrow">FAMILY TRAVEL REVIEW · 2026.09.10—09.13</p>
-          <h1>沈阳四日游</h1>
-        </div>
-        <div class="top-summary" aria-label="旅行摘要">
-          <span>3 人同行</span><span>南京 ⇄ 沈阳</span><span>品质与松弛优先</span>
-        </div>
-      </header>
-
-      <section class="day-picker" aria-label="选择日期">
-        <button class="day-tab active" data-day="D1"><b>D1</b><span>9/10 周四</span><small>温泉初遇</small></button>
-        <button class="day-tab" data-day="D2"><b>D2</b><span>9/11 周五</span><small>盛京旧城</small></button>
-        <button class="day-tab" data-day="D3"><b>D3</b><span>9/12 周六</span><small>历史与西塔</small></button>
-        <button class="day-tab" data-day="D4"><b>D4</b><span>9/13 周日</span><small>轻松返程</small></button>
+    <main class="travel-app">
+      <section class="map-stage" aria-label="沈阳旅行地图">
+        <header class="map-title"><p>2026.09.10—09.13</p><h1>沈阳四日游</h1></header>
+        <div id="route-map" role="img" aria-label="可缩放的沈阳旅行路线地图"></div>
+        <div id="map-tooltip" class="map-tooltip" hidden></div>
+        <div class="map-note">拖动或缩放地图 · 虚线表示当天推荐顺序，不是导航路径</div>
       </section>
 
-      <section class="content-grid">
-        <section class="map-panel" aria-label="今日路线图">
-          <div class="panel-heading">
-            <div><p class="eyebrow">TODAY'S ROUTE</p><h2 id="day-title">D1 · 温泉初遇</h2></div>
-            <button id="reset-selection" class="text-button">查看整日</button>
-          </div>
-          <div class="map-canvas">
-            <div id="route-map" role="img" aria-label="可缩放的沈阳路线地图"></div>
-            <div class="map-hint">点击任一圆点，查看地点详情</div>
-          </div>
-          <div id="route-caption" class="route-caption"></div>
-        </section>
-
-        <aside class="detail-panel" aria-live="polite">
-          <div id="detail-card"></div>
-        </aside>
-      </section>
-
-      <section class="bottom-grid">
-        <section class="timeline-panel card">
-          <div class="panel-heading"><div><p class="eyebrow">RELAXED TIMELINE</p><h2>今天怎么走</h2></div></div>
-          <ol id="timeline" class="timeline"></ol>
-        </section>
-        <section class="budget-panel card">
-          <p class="eyebrow">ESTIMATED TRIP BUDGET</p>
-          <h2>全程基础预算</h2>
-          <strong>¥8,180–8,980</strong><span>3 人 · 含基础餐饮与市内交通预留</span>
-          <div class="budget-bars">
-            <div><span>机票</span><i style="--width: 62%"></i><b>约 ¥3,030</b></div>
-            <div><span>D1 温泉套房</span><i style="--width: 45%"></i><b>约 ¥2,100–2,200</b></div>
-            <div><span>市区酒店 2 晚</span><i style="--width: 38%"></i><b>约 ¥1,300–1,700</b></div>
-          </div>
-          <p class="mini-note">所有房价、票价和营业时间在下单/出发前再次确认。</p>
-        </section>
-      </section>
-
-      <section class="review-card">
-        <div><p class="eyebrow">BOOKING CHECKLIST</p><h2>订前只看这 4 件事</h2></div>
-        <ul>
-          <li><b>清河半岛：</b>确认主楼 5 楼、2×1.8m、四早四票、允许 3 位成人。</li>
-          <li><b>亚朵 S：</b>尽早锁尊享家庭房（1.8m + 1.2m），备注高楼层、安静、无烟。</li>
-          <li><b>景点：</b>故宫、九一八、工业博物馆按官方预约页与临时公告复核。</li>
-          <li><b>航班：</b>只带随身行李；以结算页的 MU2827 / HO1712 最终时刻为准。</li>
-        </ul>
-      </section>
-      <footer class="source-footer">
-        <p><b>信息参考：</b>沈阳故宫官网、辽宁文旅/预约页面、景点及酒店订单页、已整理的住客体验资料。开放时间、房型权益、价格和预约名额均以出发前的官方页面与付款页为准。</p>
-        <p><a href="https://www.sypm.org.cn/" target="_blank" rel="noreferrer">沈阳故宫官网</a>　·　<a href="https://www.shenyang.gov.cn/" target="_blank" rel="noreferrer">沈阳市政府公开信息</a>　·　公开版不含订单号、证件及联系方式。</p>
-      </footer>
+      <aside class="side-panel" aria-live="polite">
+        <nav id="day-tabs" class="day-tabs" aria-label="选择日期"></nav>
+        <div id="sidebar-content"></div>
+      </aside>
     </main>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
