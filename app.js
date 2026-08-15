@@ -45,5 +45,5 @@ function overviewPanel(){
     const footer=day.stayNode?`🛏 ${day.stay} · ${day.dailyBudget}`:`✈ 返程日 · ${day.dailyBudget}`;
     return `<button class="day-overview" data-jump="${day.id}"><span class="day-label">${day.id} · ${day.date}</span><b>${day.title}</b><div class="overview-periods">${periods}</div><small>${footer}</small></button>`;
   }).join("");
-  return `<section class="overview-metrics"><div><small>🗓 行程</small><b>${days.length} 天</b></div><div><small>🛏 住宿</small><b>2 处</b></div><div><small>¥ 预算</small><b>8.2–9.0k</b></div><div><small>👥 同行</small><b>${meta.travellers} 人</b></div></section><section class="section-block"><div class="day-overview-list">${cards}</div></section>`;
+  return `<section class="overview-metrics"><div><small>🗓 行程</small><b>${days.length} 天</b></div><div><small>🛏 住宿</small><b>2 处</b></div><div><small>¥ 预算</small><b>8.2–9.0k</b></div><div><small>👥 同行</small><b>${trip.meta.travellers} 人</b></div></section><section class="section-block"><div class="day-overview-list">${cards}</div></section>`;
 }
